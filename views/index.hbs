@@ -3,8 +3,8 @@
 	<div class="workspace_wrapper" ng-controller="botCommands">
 		<div class="toolbar">
 			<div ng-if="!ui.export_mode" class="righthand_tool">
-				<button class="lockable" ng-click="toggleExportMode()">Exportar</button>
-				<button class="lockable" ng-click="toggleImportMode()">Importar</button>
+				<button class="lockable btn btn-primary pull-right" ng-click="toggleExportMode()">Exportar</button>
+				<button class="lockable btn btn-primary pull-right" ng-click="toggleImportMode()">Importar</button>
 			</div>
 			<div ng-if="ui.export_mode" class="righthand_tool">
 				<button ng-disabled="ui.export_count==0" ng-click="createExport()" class="primary">
@@ -15,7 +15,7 @@
 				<button ng-click="toggleExportMode()">Cancel</button>
 			</div>
 			<div>
-				<button class="lockable" ng-click="createScriptModal()">Nuevo</button>
+				<button class="lockable btn btn-primary btn-round" ng-click="createScriptModal()">Nuevo</button>
 				<input type="search" ng-model="ui.filter" placeholder="Filter Scripts" />
 				<label>
 					<input type="checkbox" ng-model="ui.searchScript" id="searchScript"> Buscar
