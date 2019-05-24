@@ -1,7 +1,4 @@
 {{> modal}}
-
-<<<<<<< HEAD
-
 <div ng-controller="editBot" class="fullscreen">
 	<div class="workspace_wrapper" ng-controller="botCommands">
 		<div class="toolbar">
@@ -94,84 +91,6 @@
 										</tbody>
 									</table>
 									<div class="ng-class:{active:ui.modal_create}; editor_modal">
-=======
-<div ng-controller="editBot" class="fullscreen">
-    <div class="workspace_wrapper" ng-controller="botCommands">
-            <div class="toolbar">
-                <div ng-if="!ui.export_mode" class="righthand_tool">
-                    <button class="lockable" ng-click="toggleExportMode()">Exportar</button>
-                    <button class="lockable" ng-click="toggleImportMode()">Importar</button>
-                </div>
-                <div ng-if="ui.export_mode" class="righthand_tool">
-                    <button ng-disabled="ui.export_count==0" ng-click="createExport()" class="primary">
-                      <span ng-if="ui.export_count > 0">Exportar {% ui.export_count %}</span>
-                      <span ng-if="ui.export_count <= 0">Selecciona el Diálogo a exportar</span>
-                    </button>
-                    <button ng-click="toggleExportMode()">Cancelar</button>
-                </div>
-
-                <div>
-                    <button class="lockable" ng-click="createScriptModal()">Nuevo</button>
-                    <input type="search" ng-model="ui.filter" placeholder="Filter Scripts" />
-                    <label><input type="checkbox" ng-model="ui.searchScript" id="searchScript"> Búsqueda a texto abierto</label>
-                </div>
-
-            </div>
-    <div class="row">
-              <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Diálogos</h4>
-                  <p class="card-category"> Lista de Diálogos</p>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class=" text-primary">
-                       <th class="sortable" ng-click="toggleSort('command')">Nombre del Diálogo<span class="sortorder" ng-if="ui.sortField=='command'">▲</span><span class="sortorder" ng-if="ui.sortField=='-command'">▼</span></th>
-                        <th>Descripción</th>
-                        <th class="sortable" ng-click="toggleSort('modified')">Modificado <span class="sortorder" ng-if="ui.sortField=='-modified'">▼</span><span class="sortorder" ng-if="ui.sortField=='modified'">▲</span></th>
-                        <th ng-if="!ui.export_mode">Acciones</th>
-                        <th ng-if="ui.export_mode">Exportar</th>
-                      </thead>
-                      <tbody>
-                        <tr ng-repeat="command in commands | orderBy: ui.sortField | filter:filterRow" class="ng-class: {selected: ui.export_mode && !command.exclude_from_export, is_fallback: (command.is_fallback)};">
-                          <td>
-                            <a ng-href="/admin/edit/{% command.command | encodeURIComponent %}">{% command.command %}</a>
-                            <div class="fallback_flag">(Fallback)</div>
-                          </td>
-                          <td>
-                            <div>{% command.description %}</div>
-                            <div ng-if="command.tags && command.tags.length" class="tags">
-                              <a href="#" ng-repeat="t in command.tags" ng-click="filter_by_tag(t, $event)" class="tag"><i class="fa fa-tag" aria-hidden="true"></i> {% t %}</a>
-                            </div>
-                          </td>
-                          <td ng-bind="command.modified | date:'MM/dd/yy'"></td>
-                          <td ng-if="ui.export_mode" class="checkbox" ng-click="add_to_export(command)"><input type="checkbox" ng-checked="!command.exclude_from_export"></input>
-                          </td>
-                        <td class="more" ng-if="!ui.export_mode">
-                           <nav>
-                            &hellip;
-                            <ul>
-                                <li ng-if="!command.is_fallback"><a ng-click="setAsFallback(command)">Use as Fallback</a></li>
-                                <li ng-if="command.is_fallback">Fallback ✔️️</li>
-                                <li class="delete"><a ng-href="#" ng-click="deleteCommand(command)">Eliminar</li>
-                            </ul>
-                           </nav>
-                          </td>
-                        </tr>
-                        <tr ng-if="ui.export_mode" class="box">
-                        <td colspan="4">
-                        <button ng-disabled="ui.export_count==0" ng-click="createExport()">
-                            <span ng-if="ui.export_count > 0">Exportar {% ui.export_count %}</span>
-                            <span ng-if="ui.export_count <= 0">Selecciona el Diálgo a exportar</span>
-                        </button>
-                        </td>
-                       </tr>
-                       </tbody>
-                    </table>
-                    <div class="ng-class:{active:ui.modal_create}; editor_modal">
->>>>>>> ed51f38abdbe81d0196de5f285a9fc64edb06c16
                     {{> importexport/modal_create}}
                     </div>
 									<div class="ng-class:{active:ui.export_display}; editor_modal">
@@ -180,7 +99,6 @@
 									<div class="ng-class:{active:ui.import_mode}; editor_modal">
                     {{> importexport/modal_import}}
                     </div>
-<<<<<<< HEAD
 								</div>
 							</div>
 						</div>
@@ -190,17 +108,3 @@
 					</div>
 				</div>
 			</div>
-=======
-                  </div>
-                </div>
-              </div>
-            </div>
-
-    <div class="workspace">
-        <div class="workspace_body">
-
-        </div>
-    </div>
-</div>
-</div>
->>>>>>> ed51f38abdbe81d0196de5f285a9fc64edb06c16
