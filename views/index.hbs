@@ -7,12 +7,12 @@
 				<button class="lockable btn btn-primary pull-right" ng-click="toggleImportMode()">Importar</button>
 			</div>
 			<div ng-if="ui.export_mode" class="righthand_tool">
-				<button ng-disabled="ui.export_count==0" ng-click="createExport()" class="primary">
+				<button ng-disabled="ui.export_count==0" ng-click="createExport()" class="primary btn btn-primary btn-round">
 					<span ng-if="ui.export_count > 0">Export {% ui.export_count %}</span>
 					<span ng-if="ui.export_count <= 0">Selecciona un Diálogo para exportar
 					</span>
 				</button>
-				<button ng-click="toggleExportMode()">Cancel</button>
+				<button class="btn btn-danger btn-round" ng-click="toggleExportMode()">Cancel</button>
 			</div>
 			<div>
 				<button class="lockable btn btn-primary btn-round" ng-click="createScriptModal()">Nuevo</button>
@@ -81,7 +81,7 @@
 											</tr>
 											<tr ng-if="ui.export_mode" class="box">
 												<td colspan="4">
-													<button ng-disabled="ui.export_count==0" ng-click="createExport()">
+													<button class="btn btn-primary btn-round" ng-disabled="ui.export_count==0" ng-click="createExport()">
 														<span ng-if="ui.export_count > 0">Export {% ui.export_count %}</span>
 														<span ng-if="ui.export_count <= 0">Select scripts to export
 														</span>
