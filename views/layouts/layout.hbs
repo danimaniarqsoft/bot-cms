@@ -1,7 +1,18 @@
-<html>
-    {{> head}}
-    <body class="full {{{body_classes}}}" ng-app="howdyPro" ng-controller="app" keypress-events >
-      {{{body}}}
-      {{> foot}}
-    </body>
+<!doctype html>
+<html lang="en">
+  {{> head}}
+  <body  class="full {{{ body_classes }}}" ng-app="howdyPro" ng-controller="app" keypress-events >
+    <div class="wrapper ">
+      {{> sidebar}}
+      <div class="main-panel">
+        {{> navbar}}
+        <div class="content">
+          <div class="container-fluid">
+          {{{ body }}}
+          </div>
+        </div>
+        {{> foot}}
+      </div>
+    </div>
+  </body>
 </html>
