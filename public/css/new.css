@@ -8,7 +8,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 	display:block
 }
 body{
-	line-height:1
+	/* line-height:1*/
 }
 ol,ul{
 	list-style:none
@@ -20,10 +20,7 @@ blockquote:before,blockquote:after,q:before,q:after{
 	content:'';
 	content:none
 }
-table{
-	border-collapse:collapse;
-	border-spacing:0
-}
+
 button{
 	border:none;
 	padding:0
@@ -785,7 +782,7 @@ span.variable{
 .secondary-sidebar{
 	width:16em;
 	background-color:#f7f7f7;
-	overflow-y:auto;
+	/* overflow-y:auto;/*
 	padding-bottom:0;
 	transition:all ease-out 0.2s
 }
@@ -1524,8 +1521,8 @@ header.bot h2{
 .workspace_sidebar{
 	width:150px;
 	float:left;
-	font-size:16px;
-	overflow-y:auto
+	font-size:16px
+	/* overflow-y:auto */
 }
 .workspace_sidebar .block{
 	padding:0.5rem 1rem
@@ -1561,21 +1558,15 @@ header.bot h2{
 .workspace_half:last-child{
 	margin-right:0
 }
-table{
-	width:100%;
-	border-spacing:0;
-	border-collapse:collapse;
-	border:1px solid #EAEAEA;
-	margin-bottom:1rem
-}
+
 td,th{
 	text-align:left;
 	border:1px solid #EAEAEA;
 	font-weight:normal
 }
 th{
-	background:#666;
-	color:#FFF;
+	/*background:#666;
+	color:#FFF;*/
 	padding:0.5rem 1rem
 }
 td{
@@ -1583,7 +1574,7 @@ td{
 	border-bottom:1px solid #CCC
 }
 tr:nth-child(2n+1){
-	background-color:#efefef
+	/*background-color:#efefef */
 }
 tr:hover{
 	border:1px solid #FeF5CB
@@ -2667,8 +2658,8 @@ div.tags span.tag{
 .fullscreen .message_list{
 	flex-grow:1;
 	flex-direction:column;
-	display:flex;
-	overflow-y:auto
+	display:flex
+	/* overflow-y:auto */
 }
 .fullscreen .message_input{
 	border-top:2px solid blue;
@@ -2691,8 +2682,8 @@ div.tags span.tag{
 	width:50%;
 	min-width:400px;
 	padding:1rem;
-	background:#DDD;
-	overflow-y:auto
+	background:#DDD
+	/* overflow-y:auto */
 }
 .fullscreen .message_editor.empty_inspector{
 	display:flex;
@@ -2870,7 +2861,7 @@ div.tags span.tag{
 	flex:1;
 	display:flex;
 	flex-direction:column;
-	overflow-y:auto;
+	/* overflow-y:auto; */
 	-webkit-overflow-scrolling:touch
 }
 .fullscreen .workspace_body{
@@ -3399,8 +3390,8 @@ div.tags span.tag{
 }
 .fullscreen .oneonone .generic_templates{
 	display:flex;
-	align-items:center;
-	overflow-x:auto
+	align-items:center
+	/* overflow-x:auto*/
 }
 .fullscreen .oneonone .generic_template{
 	flex:none;
@@ -3688,7 +3679,7 @@ div.tags span.tag{
 .editor_modal_box section{
 	flex:1;
 	flex-basis:auto;
-	overflow-y:auto;
+	/* overflow-y:auto; */
 	background:#f0f0f0
 }
 .editor_modal_box section.box{
@@ -3869,7 +3860,7 @@ button.delete:hover:before{
 }
 .teams_attachments_wrapper.carousel{
 	width:460px;
-	overflow-x:auto
+	/* overflow-x:auto */
 }
 .teams_attachments.carousel{
 	display:flex;
