@@ -22,7 +22,7 @@
         </li>
         <li ng-repeat="option in ui.current_action.options track by $index">
           <div class="delete">
-            <button class="delete" ng-click="deleteMenuOption(ui.current_action, $index)"></button>
+            <button class="delete btn btn-danger pull-right" ng-click="deleteMenuOption(ui.current_action, $index)"></button>
           </div>
           <div class="cell">
               <input type="text" ng-model="option.text" required placeholder="Display Text" />
@@ -38,12 +38,12 @@
           </div>
         </li>
         <li class="placeholder_button">
-            <button ng-click="ui.current_action.options.push({})">Add Option</button>
+            <button class="btn btn-primary pull-right" ng-click="ui.current_action.options.push({})">Agregar Opción</button>
         </li>
       </ul>
     </section>
     <footer>
-      <button type="submit">Done</button>
+      <button class="btn btn-primary pull-right" type="submit">Regresar</button>
     </footer>
     </div>
 </form>
