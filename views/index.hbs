@@ -58,7 +58,15 @@
 											</td>
 											<td ng-bind="command.modified | date:'MM/dd/yy'"></td>
 											<td ng-if="ui.export_mode" class="checkbox" ng-click="add_to_export(command)">
-												<input type="checkbox" ng-checked="!command.exclude_from_export"></input>
+											<div class="form-check">
+												<label class="form-check-label">
+												<input class="form-check-input" type="checkbox" ng-checked="!command.exclude_from_export"></input>
+												<span class="form-check-sign">
+													<span class="check"></span>
+												</span>
+												</label>
+											</div>
+
 											</td>
 											<td class="more" ng-if="!ui.export_mode">
 												<nav>
