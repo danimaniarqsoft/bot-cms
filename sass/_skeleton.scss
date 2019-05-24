@@ -136,7 +136,7 @@ a:hover {
 
 .box {
     @include clearfix;
-    border: 2px solid #CCC;
+    /* border: 2px solid #CCC; */
     padding: 1rem calc(1rem - 2px);
     margin-bottom: 1rem;
 

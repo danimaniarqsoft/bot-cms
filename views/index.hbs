@@ -12,14 +12,11 @@
 					<span ng-if="ui.export_count <= 0">Selecciona un Diálogo para exportar
 					</span>
 				</button>
-				<button class="btn btn-danger btn-round" ng-click="toggleExportMode()">Cancel</button>
+				<button class="btn btn-danger btn-round" ng-click="toggleExportMode()">Cancelar</button>
 			</div>
 			<div>
 				<button class="lockable btn btn-primary btn-round" ng-click="createScriptModal()">Nuevo</button>
-				<input type="search" ng-model="ui.filter" placeholder="Filter Scripts" />
-				<label>
-					<input type="checkbox" ng-model="ui.searchScript" id="searchScript"> Buscar
-					</label>
+				<input class="form-control" type="search" ng-model="ui.filter" placeholder="Buscar Diálogo" />
 				</div>
 			</div>
 			<div class="row">
@@ -33,7 +30,7 @@
 							<div class="table-responsive">
 								<table class="table">
 									<thead class=" text-primary">
-										<th class="sortable" ng-click="toggleSort('command')">Script Name
+										<th class="sortable" ng-click="toggleSort('command')">Nombre Diálogo
 											<span class="sortorder" ng-if="ui.sortField=='command'">▲</span>
 											<span class="sortorder" ng-if="ui.sortField=='-command'">▼</span>
 										</th>
@@ -42,8 +39,8 @@
 											<span class="sortorder" ng-if="ui.sortField=='-modified'">▼</span>
 											<span class="sortorder" ng-if="ui.sortField=='modified'">▲</span>
 										</th>
-										<th ng-if="!ui.export_mode">Actions</th>
-										<th ng-if="ui.export_mode">Export</th>
+										<th ng-if="!ui.export_mode">Acciones</th>
+										<th ng-if="ui.export_mode">Exportar</th>
 									</thead>
 									<tbody>
 										<tr ng-repeat="command in commands | orderBy: ui.sortField | filter:filterRow" class="ng-class: {selected: ui.export_mode && !command.exclude_from_export, is_fallback: (command.is_fallback)};">
@@ -83,7 +80,7 @@
 												<td colspan="4">
 													<button class="btn btn-primary btn-round" ng-disabled="ui.export_count==0" ng-click="createExport()">
 														<span ng-if="ui.export_count > 0">Export {% ui.export_count %}</span>
-														<span ng-if="ui.export_count <= 0">Select scripts to export
+														<span ng-if="ui.export_count <= 0">Selecciona los Diálogos a Exportar
 														</span>
 													</button>
 												</td>
