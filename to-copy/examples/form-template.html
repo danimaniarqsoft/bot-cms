@@ -1,23 +1,23 @@
-<div class="container-fluid">
+<div class="container-fluid editor_modal_box">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h4 class="card-title">Nuevo Script</h4>
-          <p class="card-category">Nuevo Diálogo</p>
+          <h4 class="card-title"> [ TITULO ] </h4>
+          <p class="card-category"> [ SUBTITULO ] </p>
         </div>
         <div class="card-body">
           <form name="add_command" ng-submit="addCommand()">
             <div class="row">
-              <div class="col-md-5">
+              <div class="col-md-12">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Nombre</label>
+                  <label class="bmd-label-floating"> [ VAR1 ] </label>
                   <input type="text" class="form-control full-width"  ng-model="command.trigger" placeholder="Create a script" required></input>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-12">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Descripción</label>
+                  <label class="bmd-label-floating"> [ VAR2 ] </label>
                   <input type="text" class="form-control full-width" ng-model="command.description" placeholder="Describe what this script does" required></input>
                 </div>
               </div>
@@ -31,6 +31,7 @@
     </div>
   </div>
 </div>
+
 
 
 <form name="add_command" ng-submit="addCommand()">

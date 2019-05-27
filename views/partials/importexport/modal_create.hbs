@@ -1,6 +1,6 @@
 <div class="container-fluid editor_modal_box">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-primary">
           <h4 class="card-title">Nuevo Diálogo</h4>
@@ -9,13 +9,13 @@
         <div class="card-body">
           <form name="add_command" ng-submit="addCommand()">
             <div class="row">
-              <div class="col-md-5">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label class="bmd-label-floating">Nombre</label>
                   <input type="text" class="form-control full-width"  ng-model="command.trigger" placeholder="Create a script" required></input>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label class="bmd-label-floating">Descripción</label>
                   <input type="text" class="form-control full-width" ng-model="command.description" placeholder="Describe what this script does" required></input>
