@@ -1239,7 +1239,7 @@ $path-color: #CCC;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.8);
     visibility: hidden;
     z-index: 1000;
 }
@@ -1250,17 +1250,17 @@ $path-color: #CCC;
 
 .editor_modal_box {
     position: absolute;
-    top: 100%;
+    // top: 100%;
     left: 50%;
     // top: 100%; left: 0; bottom: 0; right: 0;
-    background: #FFF;
-    border: 2px solid #000;
+    // background: #FFF;
+    // border: 2px solid #000;
     width: 100%;
     max-width: 800px;
-    max-height: 80%;
-    display: flex;
-    flex-direction: column;
-    transition: top 0.5s cubic-bezier(.74,.38,.45,1);
+    // max-height: 80%;
+    // display: flex;
+    // flex-direction: column;
+    // transition: top 0.5s cubic-bezier(.74,.38,.45,1);
 }
 
 .active .editor_modal_box {

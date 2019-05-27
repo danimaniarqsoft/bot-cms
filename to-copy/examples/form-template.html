@@ -1,10 +1,10 @@
-<div class="container-fluid editor_modal_box">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h4 class="card-title">Nuevo Diálogo</h4>
-          <p class="card-category">Crear un nuevo Diálogo</p>
+          <h4 class="card-title">Nuevo Script</h4>
+          <p class="card-category">Nuevo Diálogo</p>
         </div>
         <div class="card-body">
           <form name="add_command" ng-submit="addCommand()">
@@ -31,3 +31,30 @@
     </div>
   </div>
 </div>
+
+
+<form name="add_command" ng-submit="addCommand()">
+  <div class="editor_modal_box">
+    <header>
+      <h1>New Script</h1>
+    </header>
+    <section>
+      <div class="bigform">
+            <p>
+              <label>Name:</label>
+              <input type="text" class="full-width" ng-model="command.trigger" placeholder="Create a script" required></input>
+            </p>
+
+            <p>
+              <label>Description:</label>
+              <input type="text" class="full-width" ng-model="command.description" placeholder="Describe what this script does" required></input>
+            </p>
+        </div>
+    </section>
+    <footer>
+      <button class="btn btn-primary pull-right" type="submit" class="primary">Crear</button>
+      <button class="btn btn-danger pull-right" type="button" ng-click="ui.modal_create=false;">Cancelar</button>
+
+    </footer>
+  </div>
+</form>
