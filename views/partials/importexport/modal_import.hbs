@@ -11,12 +11,12 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label class="bmd-label-floating"> Importar Documento JSON </label>
-                  <textarea rows='10' class="form-control full-width" ng-model="ui.un_parsed_commands" required></textarea>
+                  <textarea rows='10' class="json" ng-model="ui.un_parsed_commands" required></textarea>
                 </div>
               </div>
             </div>
             <button class="btn btn-primary pull-right" type="submit" class="primary">Importar Diálogo</button>
+            <button class="btn btn-danger pull-right" type="button" ng-click="ui.import_mode=false;">Cancelar</button>
             <div class="clearfix"></div>
           </form>
           <div ng-if="commands_for_import.length">
@@ -45,8 +45,8 @@
           </table>
         </div>
         <form name="finalize_import" ng-submit="makeImportApi()">
-          <button class="primary btn btn-primary pull-right" type="submit" ng-disabled="!commands_for_import.length" >{% ui.import_button_text %}</button>
-          <button class="btn btn-danger pull-right" type="button" ng-click="ui.import_mode=false;">Cancelar</button>
+          <!--<button class="primary btn btn-primary pull-right" type="submit" ng-disabled="!commands_for_import.length" >{% ui.import_button_text %}</button>-->
+          <!--<button class="btn btn-danger pull-right" type="button" ng-click="ui.import_mode=false;">Cancelar</button> -->
         </form>
       </div>
     </div>
