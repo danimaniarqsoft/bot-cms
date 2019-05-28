@@ -7,11 +7,12 @@
 
 <div class="fullscreen">
 	<div  class="workspace_wrapper {{^is_active}}locked{{/is_active}}" ng-controller="scriptEditor">
-		<div class="ng-class:{active: ui.confirmShow}; confirmation">
-			<div class="wrapper">
+		<div class="alert alert-success ng-class:{active: ui.confirmShow}; confirmation">
+			<div class="">
 				<div class="message" ng-bind-html="ui.confirmText"></div>
 			</div>
 		</div>
+
 		<div class="toolbar">
 			<button class="btn btn-primary pull-right" ng-click="ui.modal_info=true">Información</button>
 			<button class="btn btn-primary pull-right" ng-click="ui.triggers=true">Disparadores</button>

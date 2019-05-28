@@ -19,3 +19,6 @@
 - [ ] modal_info.hbs
 - [ ] modal_menu.hbs
 - [ ] modal_triggers.hbs
+
+
+pendientes: edit.hbs
