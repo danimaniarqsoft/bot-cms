@@ -4,8 +4,8 @@
 
 - [x] index.hbs
 - [x] modal_create.hbs
-- [ ] modal_import.hbs
-- [ ] modal_export.hbs
+- [x] modal_import.hbs
+- [x] modal_export.hbs
 - [ ] modal_create.hbs
 
 #### editor

@@ -28,7 +28,7 @@
               </thead>
               <tbody>
               <tr ng-repeat="c in commands_for_import" class="ng-class:{exists: c.already_exist && !c.exclude_from_import};">
-                <td class="checkbox">									
+                <td class="checkbox">	
                   <div class="form-check">
                     <label class="form-check-label">
                     <input ng-click="add_to_import(c)" class="form-check-input" type="checkbox" ng-checked="!c.exclude_from_import" ></input>
@@ -44,8 +44,8 @@
               </tbody>
           </table>
         </div>
-        <form name="finalize_import" ng-submit="makeImportApi()">
-          <!--<button class="primary btn btn-primary pull-right" type="submit" ng-disabled="!commands_for_import.length" >{% ui.import_button_text %}</button>-->
+        <form name="finalize_import" ng-submit="makeImportApi()" ng-if="commands_for_import.length!=0">
+          <button class="primary btn btn-primary pull-right" type="submit">{% ui.import_button_text %}</button>
           <!--<button class="btn btn-danger pull-right" type="button" ng-click="ui.import_mode=false;">Cancelar</button> -->
         </form>
       </div>
