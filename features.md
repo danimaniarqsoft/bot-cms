@@ -6,7 +6,7 @@
 - [x] modal_create.hbs
 - [x] modal_import.hbs
 - [x] modal_export.hbs
-- [ ] modal_create.hbs
+- [x] modal_create.hbs
 
 #### editor
 
@@ -14,7 +14,7 @@
 - [ ] description.hbs
 - [ ] branches.hbs
 - [ ] modal_branch.hbs
-- [ ] modal_duplicate.hbs
+- [x] modal_duplicate.hbs
 - [ ] modal_export.hbs
 - [ ] modal_info.hbs
 - [ ] modal_menu.hbs

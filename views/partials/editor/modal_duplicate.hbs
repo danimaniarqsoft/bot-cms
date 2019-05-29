@@ -1,20 +1,27 @@
 <form ng-submit="duplicateThread(ui.dupe_thread_name)">
-
-<div class="editor_modal_box" ng-if="ui.dupethread">
-  <header>
-    <h1>Duplicate Thread</h1>
-  </header>
-  <section>
-    <div class="bigform">
-          <p>
-            <label>Thread Name:</label>
-            <input ng-model="ui.dupe_thread_name" type="text" required />
-          </p>
-    </div>
-  </section>
-  <footer>
-    <button type="submit" class="btn btn-primary pull-right">Guardar</button>
-    <button type="button" class="btn btn-danger pull-right" ng-click="ui.dupethread=false;">Cancelar</button>
-  </footer>
-</div>
+	<div class="container-fluid editor_modal_box" ng-if="ui.dupethread">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header card-header-primary">
+						<h4 class="card-title"> Duplicar Hilo </h4>
+						<p class="card-category"> Duplicar un Hilo </p>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="bmd-label-floating"> Nombre del Hilo </label>
+									<input type="text" class="form-control full-width"  ng-model="ui.dupe_thread_name" required></input>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary pull-right">Guardar</button>
+						<button type="button" class="btn btn-danger pull-right" ng-click="ui.dupethread=false;">Cancelar</button>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </form>
