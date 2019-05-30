@@ -1,3 +1,8 @@
+<script>
+    var menu_id = "{{menu_id}}";
+	console.log('menu:')
+	console.log(menu_id)
+</script>
 <div class="sidebar" data-color="purple" data-background-color="white" data-image="../img/sidebar-1.jpg">
 	<div class="logo">
 		<a href="http://www.creative-tim.com" class="simple-text logo-mini">
@@ -6,16 +11,16 @@
 	</div>
 	<div class="sidebar-wrapper">
 		<ul class="nav">
-			<li class="nav-item active ">
-				<a class="nav-link" href="/admin">
+			<li class="nav-item ng-class:{active: ui.menuDialogShow} ">
+				<a class="nav-link" href="/admin?menuid=hola">
 					<i class="material-icons">forum</i>
-					<p>Diálogos</p>
+					<p>Diálogos {% ui.menu_id %}</p>
 				</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item ng-class:{active: ui.menuConfigShow}">
 				<a class="nav-link" href="/admin/config">
 					<i class="material-icons">dashboard</i>
-					<p>Configuración</p>
+					<p>Configuración {% reloj %}</p>
 				</a>
 			</li>
 			<!-- your sidebar here -->

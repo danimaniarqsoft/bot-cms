@@ -75,6 +75,8 @@ app.controller('app', ['$scope', '$http', '$sce', '$cookies','sdk', '$location',
         inspectorExpanded: true,
         confirmText: null,
         confirmShow: false,
+        menuDialogShow: true,
+        menuConfigShow: false,
     };
 
     $scope.goto = function(url) {
