@@ -1,4 +1,4 @@
-# Bot CMS
+# Botkit CMS
 
 ## An open tool for designing, building and managing interactive dialog systems
 
@@ -6,9 +6,10 @@
 
 ## Install and run it locally
 
+Clone and install botkit-cms
 ```
-git clone https://github.com/danimaniarqsoft/bot-cms.git
-cd bot-cms
+git clone https://github.com/howdyai/botkit-cms.git
+cd botkit-cms
 npm install
 ```
 Create an .env file from .env_sample and change the variables
@@ -17,8 +18,8 @@ cp .env_sample .env
 ```
 ```
 PLATFORM=web
-TOKENS=shared-token-123
-USERS=admin:admin
+TOKENS=youwillneverguessmysecretbottoken
+USERS=admin:123secret
 ```
 
 Create .data folder, create a scripts.json inside. Copy the content from sample-scripts.json
@@ -91,7 +92,7 @@ After enabling LUIS, new options will appear in the Trigger dialog that will all
 
 ### Editor Configuration
 
-The Bot dialog editor can be used in one of several different flavors, controlled by the `PLATFORM` environment variable.
+The Botkit dialog editor can be used in one of several different flavors, controlled by the `PLATFORM` environment variable.
 
 | Value | Description
 |--- |---

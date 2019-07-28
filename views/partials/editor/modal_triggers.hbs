@@ -1,11 +1,11 @@
 <div class="editor_modal_box" ng-if="ui.triggers">
   <header>
-    <h1>Agregar Disparador</h1>
+    <h1>Add Trigger</h1>
 
     <form name="formHolder.add_trigger" ng-submit="addTrigger()">
 
         <p>
-            <label>Tipo de Disparador</label>
+            <label>Trigger Type</label>
               <select ng-model="trigger.type">
                 <option value="string">Exact String Match</option>
                 <option value="regexp">Regular Expression</option>
@@ -24,7 +24,7 @@
             <input type="text" ng-model="trigger.pattern" required placeholder="New Trigger" />
         </p>
 
-        <button class="btn btn-primary pull-right" type="submit" ng-disabled="!trigger.pattern" class="primary">Agregar</button>
+        <button type="submit" ng-disabled="!trigger.pattern" class="primary">Add</button>
     </form>
   </header>
   <section>
@@ -40,7 +40,7 @@
     </tr>
     <tr ng-repeat="trigger in command.triggers">
       <td width="22">
-        <button class="delete btn btn-danger pull-right" ng-click="removeTrigger($index)"></button>
+        <button class="delete" ng-click="removeTrigger($index)"></button>
       </td>
       <td width="50">
         {% trigger.type %}
@@ -52,6 +52,6 @@
   </table>
 </section>
 <footer>
-  <button class="btn btn-primary pull-right"ng-click="closeTriggers()">Regresar</button>
+  <button ng-click="closeTriggers()">Done</button>
 </footer>
 </div>

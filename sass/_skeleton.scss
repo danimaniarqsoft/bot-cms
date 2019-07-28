@@ -1,4 +1,8 @@
 
+li,
+p {
+    line-height: 150%;
+}
 
 h2.bot_name {
     font-size: 2rem;
@@ -17,13 +21,13 @@ h2.bot_name {
     }
 }
 
-label.button {
+label.buttony {
     display: block;
     font-size: 16px;
     border: 1px solid #666;
     text-align: center;
     text-decoration: none;
-    /*font-family: $headline-font;*/
+    font-family: $headline-font;
     font-weight: bold;
     letter-spacing: 1px;
     padding: 0.5rem 2rem;
@@ -41,6 +45,7 @@ button {
     border-radius: 2px;
     color: #666;
     cursor: pointer;
+    background: silver linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
     // display: block;
     // padding: 0.5rem 2rem;
     // color: #FFF;
@@ -48,7 +53,7 @@ button {
     // background: #666;
     text-align: center;
     text-decoration: none;
-    /* font-family: $headline-font; */
+    font-family: $headline-font;
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1;
@@ -79,7 +84,8 @@ button {
         color: #FFF;
 
         &:disabled {
-          
+          background: #EEE;
+          color: #ccc;
 
         }
     }
@@ -109,7 +115,8 @@ body,
 html {
     margin: 0;
     padding: 0;
-    /* font-family: $body-font;*/
+    font-size: 18px;
+    font-family: $body-font;
     color: #333;
 }
 
@@ -121,6 +128,42 @@ img {
     max-width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+    margin-top: 0;
+    font-weight: normal;
+    color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $headline-font;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 2rem;
+    color: $main-blue;
+    margin-bottom: 1rem;
+}
+
 a {
     color: $main-blue;
 }
@@ -130,12 +173,13 @@ a:hover {
 }
 
 .wrapper {
-    
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .box {
     @include clearfix;
-    /* border: 2px solid #CCC; */
+    border: 2px solid #CCC;
     padding: 1rem calc(1rem - 2px);
     margin-bottom: 1rem;
 
@@ -188,6 +232,28 @@ p.with_sub_setting {
         font-weight: bold;
         font-size: 1rem;
         margin-bottom: 0.5rem;
+    }
+}
+
+.table_header {
+    @include clearfix;
+    padding: 1rem calc(1rem - 2px);
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    &.boxed {
+        border: 2px solid #CCC;
+        border-bottom: 0;
+    }
+
+    &.short {
+        padding-top: 0;
+
+        h3 {
+            margin-top: 0;
+        }
     }
 }
 
@@ -353,7 +419,7 @@ header.bot h2 {
     width: 150px;
     float: left;
     font-size: 16px;
-    /* overflow-y: auto; */
+    overflow-y: auto;
 
     .block {
         padding: 0.5rem 1rem;
@@ -399,7 +465,43 @@ header.bot h2 {
     }
 }
 
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #EAEAEA;
+    margin-bottom: 1rem;
+}
 
+td,
+th {
+    text-align: left;
+    border: 1px solid #EAEAEA;
+    font-weight: normal;
+}
+
+th {
+    background: #666;
+    color: #FFF;
+    padding: 0.5rem 1rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #CCC;
+}
+
+tr:nth-child(2n+1) {
+    background-color: #efefef;
+}
+
+tr:hover {
+    border: 1px solid #FeF5CB;
+}
+
+tr.selected {
+    background-color: #FeF5CB;
+}
 
 .fallback_flag {
     display: none;
@@ -490,7 +592,7 @@ select,
 textarea {
     width: 100%;
     font-size: 16px;
-    /* border: 1px solid #CCC;*/
+    border: 1px solid #CCC;
 }
 
 input[type=search] {
@@ -798,7 +900,7 @@ td.short {
 }
 
 .more {
-    position: absolute;
+    position: relative;
     text-align: center;
     font-size: 18px;
 

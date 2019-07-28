@@ -85,12 +85,6 @@ gulp.task('controller-concat', function() {
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('./public/js/'));
 });
-
-gulp.task('copy-imagess', function () {
-    gulp.src('./img/**/*.{gif,jpg,png,svg}')
-        .pipe(gulp.dest('./public/img/'));
-});
-
 // -----------------------------------------------------------/
 // Rebuild all the things
 // -----------------------------------------------------------/

@@ -470,7 +470,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
                 "topic":"default",
                 "script":[
                     {
-                        "text": ["Éste es el " + $scope.command.trigger + " script. Modificame!"],
+                        "text": ["This is the " + $scope.command.trigger + " script. Customize me!"],
                     },
                     {
                         "action": "complete",
@@ -481,7 +481,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
                 "topic":"on_timeout",
                 "script":[
                     {
-                        "text": ["Parece que te distrajiste. Podemos continuar más tarde."],
+                        "text": ["Looks like you got distracted. We can continue later."],
                     },
                     {
                         "action": "timeout",

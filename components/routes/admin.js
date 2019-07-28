@@ -6,10 +6,8 @@ const async = require('async');
 module.exports = function(webserver, api) {
 
     webserver.get('/admin', function(req, res) {
-       // console.log(req.query.menuid)
         res.render('index',{
             layout: 'layouts/layout',
-            menu_id: req.query.menuid,
         });
     });
 

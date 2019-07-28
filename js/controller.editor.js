@@ -1299,7 +1299,7 @@ app.controller('scriptEditor', ['$scope', '$cookies', '$sce', 'sdk', '$location'
     }
 
     $scope.saveStatus = function() {
-        var rendered = 'Última vez guardado ' + moment($scope.ui.lastSaved).fromNow();
+        var rendered = 'Last saved ' + moment($scope.ui.lastSaved).fromNow();
         return $sce.trustAsHtml(rendered);
     }
 
@@ -1320,7 +1320,7 @@ app.controller('scriptEditor', ['$scope', '$cookies', '$sce', 'sdk', '$location'
                     $scope.command.modified = res.modified;
 
                     $scope.saved();
-                    $scope.confirmation('¡Guardado Exitoso!');
+                    $scope.confirmation('Saved successfully.');
                     $scope.$apply();
                     resolve(res);
                 }).catch(function(err) {
@@ -1328,7 +1328,7 @@ app.controller('scriptEditor', ['$scope', '$cookies', '$sce', 'sdk', '$location'
                     $scope.handleAjaxError(err);
                 });
             } else {
-                $scope.handleAjaxError('Se encontraron opciones de script inválidas. Por favor, corrija los problemas resaltados antes de guardar');
+                $scope.handleAjaxError('Invalid script options were found. Please correct the highlighted problems before saving.');
                 // reject('Invalid script options were found. Please correct the highlighted problems before saving.');
             }
         });

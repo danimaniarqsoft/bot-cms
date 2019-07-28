@@ -32,6 +32,7 @@ $path-color: #CCC;
         border-radius: 2px;
         color: #333;
         cursor: pointer;
+        background: silver linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
     }
 }
 
@@ -360,7 +361,7 @@ $path-color: #CCC;
         flex: 1;
         display: flex;
         flex-direction: column;
-        /* overflow-y: auto;*/
+        overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -1239,7 +1240,7 @@ $path-color: #CCC;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.25);
     visibility: hidden;
     z-index: 1000;
 }
@@ -1250,17 +1251,17 @@ $path-color: #CCC;
 
 .editor_modal_box {
     position: absolute;
-    // top: 100%;
+    top: 100%;
     left: 50%;
     // top: 100%; left: 0; bottom: 0; right: 0;
-    // background: #FFF;
-    // border: 2px solid #000;
+    background: #FFF;
+    border: 2px solid #000;
     width: 100%;
     max-width: 800px;
-    // max-height: 80%;
-    // display: flex;
-    // flex-direction: column;
-    // transition: top 0.5s cubic-bezier(.74,.38,.45,1);
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    transition: top 0.5s cubic-bezier(.74,.38,.45,1);
 }
 
 .active .editor_modal_box {
@@ -1409,6 +1410,7 @@ $path-color: #CCC;
 }
 
 .editor_modal_box footer {
+    border-top: 1px solid #000;
     margin: 0;
 
     .hint {
@@ -1436,7 +1438,7 @@ $path-color: #CCC;
 .importable_scripts {
     tr.exists {
         color: #d50631;
-        background-color: #f4363614;
+        background-color: #fedce3;
     }
 }
 

@@ -1,27 +1,14 @@
-<div class="container-fluid editor_modal_box">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="card">
-				<div class="card-header card-header-primary">
-					<h4 class="card-title"> Exportar Diálogo</h4>
-					<p class="card-category"> Descargar el Diálogo, o copiar el documento JSON en un archivo</p>
-				</div>
-				<div class="card-body">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea class="form-control full-width" rows='10' id="export" readonly>{% parsed_commands | json %}</textarea>
-							</div>
-						</div>
-					</div>
-					<a class="btn btn-success pull-right" ng-href="{% ui.exported_text %}" download="scripts.json">Descargar</a>
-					<button class="btn btn-info pull-right" ngclipboard data-clipboard-target="#export" ngclipboard-success="clipped(e);" ngclipboard-error="clipError(e);">
-						<i class="fa fa fa-clipboard"></i> {% ui.copy %}
-					</button>
-					<button class="btn btn-danger pull-right" ng-click="clearExport()">Cancelar</button>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="editor_modal_box">
+    <header>
+      <h3>Script Export</h3>
+      <p>Download exported scripts, or copy the JSON below into your own file.</p>
+    </header>
+    <section class="box">
+      <textarea rows='10' id="export" readonly>{% parsed_commands | json %}</textarea>
+    </section>
+    <footer>
+      <a class="button" ng-href="{% ui.exported_text %}" download="scripts.json">Download</a>
+      <button ngclipboard data-clipboard-target="#export" ngclipboard-success="clipped(e);" ngclipboard-error="clipError(e);"><i class="fa fa fa-clipboard"></i> {% ui.copy %}</button>
+      <button ng-click="clearExport()">Done</button>
+    </footer>
 </div>

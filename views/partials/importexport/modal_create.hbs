@@ -1,33 +1,25 @@
-<div class="container-fluid editor_modal_box">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header card-header-primary">
-          <h4 class="card-title">Nuevo Diálogo</h4>
-          <p class="card-category">Crear un nuevo Diálogo</p>
+<form name="add_command" ng-submit="addCommand()">
+  <div class="editor_modal_box">
+    <header>
+      <h1>New Script</h1>
+    </header>
+    <section>
+      <div class="bigform">
+            <p>
+              <label>Name:</label>
+              <input type="text" class="full-width" ng-model="command.trigger" placeholder="Create a script" required></input>
+            </p>
+
+            <p>
+              <label>Description:</label>
+              <input type="text" class="full-width" ng-model="command.description" placeholder="Describe what this script does" required></input>
+            </p>
         </div>
-        <div class="card-body">
-          <form name="add_command" ng-submit="addCommand()">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="bmd-label-floating">Nombre</label>
-                  <input type="text" class="form-control full-width"  ng-model="command.trigger" placeholder="Nombre del Diálogo" required></input>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="bmd-label-floating">Descripción</label>
-                  <input type="text" class="form-control full-width" ng-model="command.description" placeholder="Describe el objetivo de éste Diálogo" required></input>
-                </div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary pull-right" class="primary">Crear</button>
-            <button type="button" class="btn btn-danger pull-right" ng-click="ui.modal_create=false;">Cancelar</button>
-            <div class="clearfix"></div>
-          </form>
-        </div>
-      </div>
-    </div>
+    </section>
+    <footer>
+      <button type="submit" class="primary">Create</button>
+      <button type="button" ng-click="ui.modal_create=false;">Cancel</button>
+
+    </footer>
   </div>
-</div>
+</form>
