@@ -54,17 +54,17 @@
      >
 
      <div ng-if="line.placeholder && bot.platform=='facebook'" class="message_placeholder">
-         <button ng-click="fb_insertAttachment(line,'image'); $event.stopPropagation()">Media Message</button>
-         <button ng-click="fb_insertAttachment(line,'button'); $event.stopPropagation()">Button Template</button>
-         <button ng-click="fb_insertAttachment(line,'generic'); $event.stopPropagation()">Generic Template</button>
-         <button ng-click="removeLineAt($index); $event.stopPropagation();" class="danger">Cancel</button>
+         <button ng-click="fb_insertAttachment(line,'image'); $event.stopPropagation()">Mensaje de Media</button>
+         <button ng-click="fb_insertAttachment(line,'button'); $event.stopPropagation()">Plantilla de Boton</button>
+         <button ng-click="fb_insertAttachment(line,'generic'); $event.stopPropagation()">Plantilla Genérica</button>
+         <button ng-click="removeLineAt($index); $event.stopPropagation();" class="danger">Cancelar</button>
      </div>
 
      <div ng-controller="teamsMode" ng-if="line.placeholder && bot.platform=='teams'" class="message_placeholder">
-         <button ng-click="addTeamsAttachment(line,'hero'); $event.stopPropagation()">Hero Card</button>
+         <button ng-click="addTeamsAttachment(line,'hero'); $event.stopPropagation()">Tarjeta Hero</button>
          <button ng-click="addTeamsAttachment(line,'thumbnail'); $event.stopPropagation()">Thumbnail Card</button>
-         <button ng-click="addTeamsAttachment(line,'file'); $event.stopPropagation()">Image</button>
-         <button ng-click="removeLineAt($index); $event.stopPropagation();" class="danger">Cancel</button>
+         <button ng-click="addTeamsAttachment(line,'file'); $event.stopPropagation()">Imagen</button>
+         <button ng-click="removeLineAt($index); $event.stopPropagation();" class="danger">Cancelar</button>
      </div>
 
 
@@ -244,39 +244,39 @@
 
             <div ng-if="line.quick_replies" class="quick_replies">
                 <div class="quick_reply" ng-repeat="reply in line.quick_replies">
-                    <span ng-if="reply.content_type == 'location'">Location</span>
+                    <span ng-if="reply.content_type == 'location'">Ubicación</span>
                     <span ng-if="reply.content_type != 'location'">{% reply.title %}</span>
                 </div>
             </div>
 
             <div class="summary" ng-if="line.collect">
-                <div ng-if="line.collect.key" class="message_option capture"><span class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Collect answer into <span class="variable">{% line.collect.key %}</span></span></div>
+                <div ng-if="line.collect.key" class="message_option capture"><span class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Recolectar Respuestas en <span class="variable">{% line.collect.key %}</span></span></div>
                 <div class="paths" ng-if="line.collect.options.length>1">
                   <div ng-if="!option.default" ng-repeat="option in line.collect.options" class="message_option {% generateActionClass(option.action) %}">
                     <span ng-if="option.pattern" class="utterance">{% option.pattern | truncateString:35:true %}</span>
 
                     <span ng-switch="option.action">
-                      <span ng-switch-when="next" class="action"><i class="fa fa-play-circle" aria-hidden="true"></i> Continue</span>
-                      <span ng-switch-when="stop" class="action"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Failed</span>
+                      <span ng-switch-when="next" class="action"><i class="fa fa-play-circle" aria-hidden="true"></i> Continuar</span>
+                      <span ng-switch-when="stop" class="action"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Fallido</span>
                       <span ng-switch-when="timeout" class="action"><i class="fa fa-clock-o" aria-hidden="true"></i> Timed Out</span>
-                      <span ng-switch-when="repeat" class="action"><i class="fa fa-repeat" aria-hidden="true"></i> Repeat</span>
-                      <span ng-switch-when="wait" class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Wait for more</span>
-                      <span ng-switch-when="complete" class="action"><i class="fa fa-check-square" aria-hidden="true"></i> Conversation Complete</span>
-                      <span ng-switch-when="execute_script" class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Go to <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.execute.script | truncateString:35:true %}:{% option.execute.thread | truncateString:35:true %}</span></span>
-                      <span ng-switch-default class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Go to <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.action | truncateString:35:true %}</span></span>
+                      <span ng-switch-when="repeat" class="action"><i class="fa fa-repeat" aria-hidden="true"></i> Repetir</span>
+                      <span ng-switch-when="wait" class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Esperar por más</span>
+                      <span ng-switch-when="complete" class="action"><i class="fa fa-check-square" aria-hidden="true"></i> Conversación completa</span>
+                      <span ng-switch-when="execute_script" class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Ir a <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.execute.script | truncateString:35:true %}:{% option.execute.thread | truncateString:35:true %}</span></span>
+                      <span ng-switch-default class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Ir a <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.action | truncateString:35:true %}</span></span>
                     </span>
                   </div>
               </div>
               <div ng-if="line.collect.options.length > 1 && option.default" ng-repeat="option in line.collect.options" class="message_option {% generateActionClass(option.action) %} else" >
                 <span ng-switch="option.action">
-                  <span ng-switch-when="next" class="action"><i class="fa fa-play-circle" aria-hidden="true"></i> Continue</span>
-                  <span ng-switch-when="stop" class="action"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Failed</span>
+                  <span ng-switch-when="next" class="action"><i class="fa fa-play-circle" aria-hidden="true"></i> Continuar</span>
+                  <span ng-switch-when="stop" class="action"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Fallido</span>
                   <span ng-switch-when="timeout" class="action"><i class="fa fa-clock-o" aria-hidden="true"></i> Timed Out</span>
-                  <span ng-switch-when="repeat" class="action"><i class="fa fa-repeat" aria-hidden="true"></i> Repeat</span>
-                  <span ng-switch-when="wait" class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Wait for more</span>
-                  <span ng-switch-when="complete" class="action"><i class="fa fa-check-square" aria-hidden="true"></i> Conversation Complete</span>
-                  <span ng-switch-when="execute_script" class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Go to <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.execute.script | truncateString:35:true %}:{% option.execute.thread | truncateString:35:true %}</span></span>
-                  <span ng-switch-default class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Go to <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.action | truncateString:35:true %}</span></span>
+                  <span ng-switch-when="repeat" class="action"><i class="fa fa-repeat" aria-hidden="true"></i> Repetir</span>
+                  <span ng-switch-when="wait" class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Esperar por más</span>
+                  <span ng-switch-when="complete" class="action"><i class="fa fa-check-square" aria-hidden="true"></i> Conversación Completa</span>
+                  <span ng-switch-when="execute_script" class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Ir a <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.execute.script | truncateString:35:true %}:{% option.execute.thread | truncateString:35:true %}</span></span>
+                  <span ng-switch-default class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Ir a <span class="branch-title" ng-click="followOption(option||line,$event)">{% option.action | truncateString:35:true %}</span></span>
                 </span>
             </div>
             </div>
@@ -294,25 +294,25 @@
 <div class="message-wrapper" ng-if="features.final_action && line.action">
     <div class="card final-action" ng-click="focusOnly(line); $event.stopPropagation()">
         <div ng-if="line.focused">
-            And then...
+            Y despues...
             <select ng-model="line.action" ng-if="line.action != '_new'" ng-change="action_then_select(line)">
                 <optgroup label="Actions">
                     <!-- <option value="next">Continue to next card</option> -->
                     <!-- <option value="repeat">Repeat this card</option> -->
-                    <option value="complete">End and mark successful</option>
-                    <option value="stop" ng-if="features.allow_quit">End and mark failed</option>
-                    <option value="timeout">End and mark timed out</option>
+                    <option value="complete">Terminar y marcar como éxitoso</option>
+                    <option value="stop" ng-if="features.allow_quit">Terminar y marcar como fallido</option>
+                    <option value="timeout">Terminar y marcar como timeout</option>
 
                 </optgroup>
                 <optgroup label="Threads" ng-if="features.branches">
-                  <option ng-if="thread.topic=='default'" ng-repeat="thread in command.script.script" value="{% thread.topic %}">Jump to: {% thread.topic %}</option>
-                  <option ng-if="thread.topic!='default'"ng-repeat="thread in command.script.script | orderBy: 'topic'" value="{% thread.topic %}">Jump to: {% thread.topic %}</option>
+                  <option ng-if="thread.topic=='default'" ng-repeat="thread in command.script.script" value="{% thread.topic %}">Ir a: {% thread.topic %}</option>
+                  <option ng-if="thread.topic!='default'"ng-repeat="thread in command.script.script | orderBy: 'topic'" value="{% thread.topic %}">Ir a: {% thread.topic %}</option>
                 </optgroup>
                 <optgroup label="New" ng-if="features.branches">
-                    <option value="_new">Jump to new thread</option>
+                    <option value="_new">Ir un nuevo Flujo</option>
                 </optgroup>
                 <optgroup label="Scripts" ng-if="ui.scripts">
-                    <option value="execute_script">Execute script</option>
+                    <option value="execute_script">Ejecutar script</option>
                 </optgroup>
             </select>
 
@@ -326,7 +326,7 @@
 
 
           <div ng-if="line.execute.script">
-              <label>Thread:</label>
+              <label>Flujo:</label>
             <div >
               <select ng-model="line.execute.thread" ng-options="thread.topic as thread.topic for thread in line.selected_scripts_threads" ng-change="makeDirty()">
               </select>
@@ -338,7 +338,7 @@
                 <form ng-submit="addThreadAsAction(newbranch, line);">
                     <div>
                         <input type="text" ng-model="newbranch" placeholder="New thread name" />
-                        <button type="submit">Add</button>
+                        <button type="submit">Agregar</button>
                     </div>
                 </form>
             </div>
@@ -346,14 +346,14 @@
         <div ng-if="!line.focused && shouldDisplayFinalAction()">
             <div class="message_option {% generateActionClass(line.action) %} final">
               <span ng-switch="line.action">
-                <span ng-switch-when="next" class="action"><i class="fa fa-play-circle" aria-hidden="true"></i> Continue</span>
-                <span ng-switch-when="stop" class="action"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Failed</span>
+                <span ng-switch-when="next" class="action"><i class="fa fa-play-circle" aria-hidden="true"></i> Continuar</span>
+                <span ng-switch-when="stop" class="action"><i class="fa fa-hand-paper-o" aria-hidden="true"></i> Fallido</span>
                 <span ng-switch-when="timeout" class="action"><i class="fa fa-clock-o" aria-hidden="true"></i> Timed Out</span>
-                <span ng-switch-when="repeat" class="action"><i class="fa fa-repeat" aria-hidden="true"></i> Repeat</span>
-                <span ng-switch-when="wait" class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Wait for more</span>
-                <span ng-switch-when="complete" class="action"><i class="fa fa-check-square" aria-hidden="true"></i> Conversation Complete</span>
-                <span ng-switch-when="execute_script" class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Go to <span class="branch-title" ng-click="followOption(line,$event)">{% line.execute.script | truncateString:35:true %}:{% line.execute.thread | truncateString:35:true %}</span></span>
-                <span ng-switch-default class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Go to <span class="branch-title" ng-click="followOption(line,$event)">{% line.action | truncateString:35:true %}</span></span>
+                <span ng-switch-when="repeat" class="action"><i class="fa fa-repeat" aria-hidden="true"></i> Repetir</span>
+                <span ng-switch-when="wait" class="action"><i class="fa fa-commenting" aria-hidden="true"></i> Esperar por más</span>
+                <span ng-switch-when="complete" class="action"><i class="fa fa-check-square" aria-hidden="true"></i> Conversación completa</span>
+                <span ng-switch-when="execute_script" class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Ir a <span class="branch-title" ng-click="followOption(line,$event)">{% line.execute.script | truncateString:35:true %}:{% line.execute.thread | truncateString:35:true %}</span></span>
+                <span ng-switch-default class="action"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Ir a <span class="branch-title" ng-click="followOption(line,$event)">{% line.action | truncateString:35:true %}</span></span>
               </span>
             </div>
         </div>

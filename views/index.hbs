@@ -5,19 +5,19 @@
     <div class="workspace_wrapper"" ng-controller="botCommands">
             <div class="toolbar">
                 <div ng-if="!ui.export_mode" class="righthand_tool">
-                    <button class="lockable" ng-click="toggleExportMode()">Export</button>
-                    <button class="lockable" ng-click="toggleImportMode()">Import</button>
+                    <button class="lockable btn btn-primary" ng-click="toggleExportMode()">Export</button>
+                    <button class="lockable btn btn-primary" ng-click="toggleImportMode()">Import</button>
                 </div>
                 <div ng-if="ui.export_mode" class="righthand_tool">
-                    <button ng-disabled="ui.export_count==0" ng-click="createExport()" class="primary">
+                    <button ng-disabled="ui.export_count==0" ng-click="createExport()" class="btn btn-primary primary">
                       <span ng-if="ui.export_count > 0">Exportar {% ui.export_count %}</span>
                       <span ng-if="ui.export_count <= 0">Seleccionar script para exportar</span>
                     </button>
-                    <button ng-click="toggleExportMode()">Cancelar</button>
+                    <button ng-click="toggleExportMode()" class="btn btn-danger">Cancelar</button>
                 </div>
 
                 <div>
-                    <button class="lockable" ng-click="createScriptModal()">Nuevo</button>
+                    <button class="lockable btn btn-primary" ng-click="createScriptModal()">Nuevo</button>
                     <input type="search" ng-model="ui.filter" placeholder="Filter Scripts" />
                     <label><input type="checkbox" ng-model="ui.searchScript" id="searchScript"> buscar en modo - full text</label>
                 </div>
@@ -54,9 +54,9 @@
                         <nav>
                             &hellip;
                             <ul>
-                                <li ng-if="!command.is_fallback"><a ng-click="setAsFallback(command)">Use as Fallback</a></li>
-                                <li ng-if="command.is_fallback">Fallback ✔️️</li>
-                                <li class="delete"><a ng-href="#" ng-click="deleteCommand(command)">Delete</li>
+                                <li ng-if="!command.is_fallback"><a ng-click="setAsFallback(command)">Utilizar como Contingente</a></li>
+                                <li ng-if="command.is_fallback">Contingente ✔️️</li>
+                                <li class="delete"><a ng-href="#" ng-click="deleteCommand(command)">Borrar</li>
                         </ul>
                     </nav>
                 </td>
@@ -64,7 +64,7 @@
 
                 <tr ng-if="ui.export_mode" class="box">
                     <td colspan="4">
-                    <button ng-disabled="ui.export_count==0" ng-click="createExport()">
+                    <button ng-disabled="ui.export_count==0" ng-click="createExport()" class="btn btn-primary">
                         <span ng-if="ui.export_count > 0">Exportar {% ui.export_count %}</span>
                         <span ng-if="ui.export_count <= 0">Seleccionar scripts para exportar</span>
                     </button>
