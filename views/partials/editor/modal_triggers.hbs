@@ -5,26 +5,26 @@
     <form name="formHolder.add_trigger" ng-submit="addTrigger()">
 
         <p>
-            <label>Trigger Type</label>
+            <label>Tipo de Disparador</label>
               <select ng-model="trigger.type">
-                <option value="string">Exact String Match</option>
-                <option value="regexp">Regular Expression</option>
-                <option value="intent" ng-if="ui.intents && ui.intents.length">Intent from LUIS.ai</option>
+                <option value="string">Palabra Exácta</option>
+                <option value="regexp">Expresión Regular</option>
+                <option value="intent" ng-if="ui.intents && ui.intents.length">Intención desde LUIS.ai</option>
             </select>
         </p>
 
         <p ng-if="trigger.type=='intent'">
-            <label>Intent</label>
+            <label>Intensión</label>
             <select ng-model="trigger.pattern" ng-options="intent.name as intent.name for intent in ui.intents track by intent.name">
             </select>
         </p>
 
         <p ng-if="trigger.type!='intent'">
-            <label>Pattern</label>
+            <label>Patrón</label>
             <input type="text" ng-model="trigger.pattern" required placeholder="New Trigger" />
         </p>
 
-        <button type="submit" ng-disabled="!trigger.pattern" class="primary">Add</button>
+        <button type="submit" ng-disabled="!trigger.pattern" class="primary">Agregar</button>
     </form>
   </header>
   <section>
@@ -32,10 +32,10 @@
     <tr>
       <th></th>
       <th>
-        Trigger Type
+        Tipo de Disparador
       </th>
       <th>
-        Pattern
+        Patrón
       </th>
     </tr>
     <tr ng-repeat="trigger in command.triggers">
@@ -52,6 +52,6 @@
   </table>
 </section>
 <footer>
-  <button ng-click="closeTriggers()">Done</button>
+  <button ng-click="closeTriggers()">Aceptar</button>
 </footer>
 </div>

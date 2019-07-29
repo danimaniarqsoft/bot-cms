@@ -2,25 +2,25 @@
 
   <h2>{% thread.topic %}</h2>
   <p ng-if="thread.topic=='default'">
-    This is the entry point for the {% command.command %} script.
+    Entrada para el script {% command.command %}.
   </p>
   <p ng-if="thread.topic!='default'">
-    This is a thread in the {% command.command %} script.
+    Flujo para el script {% command.command %}.
   </p>
   <div class="backlinks">
     <div ng-if="thread.topic=='default' && command.triggers.length">
-      Triggers: <br/>
+      Disparador: <br/>
       <span class="message_option" ng-repeat="trigger in command.triggers"><span class="utterance" ng-click="ui.triggers=true">{% trigger.pattern %}</span></span>
       <!-- <span class="message_option" ng-click="ui.triggers=true">+</span> -->
     </div>
 
     <div ng-if="ui.backlinks.length">
-      Transition from:</br>
+      Transición desde:</br>
       <div class="message_option" ng-repeat="option in ui.backlinks">
         <span ng-switch="option.action">
           <span class="action" ng-switch-when="execute_script">
             <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-            from
+            desde
             <span class="branch-title" ng-click="followOption(option,$event)">{% option.execute.script | truncateString:35:true %}:{% option.execute.thread | truncateString:35:true %}</span>
           </span>
           <span class="action" ng-switch-default>
@@ -35,7 +35,7 @@
     <div class="message_option" ng-if="(thread.topic!='default' && !ui.backlinks.length) || (thread.topic=='default' && !ui.backlinks.length && !command.triggers.length)">
       <span class="warning">
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-        No known entry point
+        No hay entradas
       </span>
     </div>
   </div>

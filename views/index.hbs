@@ -10,16 +10,16 @@
                 </div>
                 <div ng-if="ui.export_mode" class="righthand_tool">
                     <button ng-disabled="ui.export_count==0" ng-click="createExport()" class="primary">
-                      <span ng-if="ui.export_count > 0">Export {% ui.export_count %}</span>
-                      <span ng-if="ui.export_count <= 0">Select scripts to export</span>
+                      <span ng-if="ui.export_count > 0">Exportar {% ui.export_count %}</span>
+                      <span ng-if="ui.export_count <= 0">Seleccionar script para exportar</span>
                     </button>
-                    <button ng-click="toggleExportMode()">Cancel</button>
+                    <button ng-click="toggleExportMode()">Cancelar</button>
                 </div>
 
                 <div>
-                    <button class="lockable" ng-click="createScriptModal()">New</button>
+                    <button class="lockable" ng-click="createScriptModal()">Nuevo</button>
                     <input type="search" ng-model="ui.filter" placeholder="Filter Scripts" />
-                    <label><input type="checkbox" ng-model="ui.searchScript" id="searchScript"> search full text</label>
+                    <label><input type="checkbox" ng-model="ui.searchScript" id="searchScript"> buscar en modo - full text</label>
                 </div>
 
             </div>
@@ -29,16 +29,16 @@
 
             <table>
                 <tr>
-                    <th class="sortable" ng-click="toggleSort('command')">Script Name<span class="sortorder" ng-if="ui.sortField=='command'">▲</span><span class="sortorder" ng-if="ui.sortField=='-command'">▼</span></th>
-                    <th>Description</th>
-                    <th class="sortable" ng-click="toggleSort('modified')">Modified <span class="sortorder" ng-if="ui.sortField=='-modified'">▼</span><span class="sortorder" ng-if="ui.sortField=='modified'">▲</span></th>
-                    <th ng-if="!ui.export_mode">Actions</th>
-                    <th ng-if="ui.export_mode">Export</th>
+                    <th class="sortable" ng-click="toggleSort('command')">Nombre del Script<span class="sortorder" ng-if="ui.sortField=='command'">▲</span><span class="sortorder" ng-if="ui.sortField=='-command'">▼</span></th>
+                    <th>Descripción</th>
+                    <th class="sortable" ng-click="toggleSort('modified')">Modificiado <span class="sortorder" ng-if="ui.sortField=='-modified'">▼</span><span class="sortorder" ng-if="ui.sortField=='modified'">▲</span></th>
+                    <th ng-if="!ui.export_mode">Acciones</th>
+                    <th ng-if="ui.export_mode">Exportar</th>
                 </tr>
                 <tr ng-repeat="command in commands | orderBy: ui.sortField | filter:filterRow" class="ng-class: {selected: ui.export_mode && !command.exclude_from_export, is_fallback: (command.is_fallback)};">
                     <td>
                         <a ng-href="/admin/edit/{% command.command | encodeURIComponent %}">{% command.command %}</a>
-                        <div class="fallback_flag">(Fallback)</div>
+                        <div class="fallback_flag">(emergente)</div>
                     </td>
                     <td>
                         <div>{% command.description %}</div>
@@ -65,8 +65,8 @@
                 <tr ng-if="ui.export_mode" class="box">
                     <td colspan="4">
                     <button ng-disabled="ui.export_count==0" ng-click="createExport()">
-                        <span ng-if="ui.export_count > 0">Export {% ui.export_count %}</span>
-                        <span ng-if="ui.export_count <= 0">Select scripts to export</span>
+                        <span ng-if="ui.export_count > 0">Exportar {% ui.export_count %}</span>
+                        <span ng-if="ui.export_count <= 0">Seleccionar scripts para exportar</span>
                     </button>
                     </td>
                 </tr>

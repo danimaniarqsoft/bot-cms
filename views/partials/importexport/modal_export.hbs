@@ -1,14 +1,14 @@
 <div class="editor_modal_box">
     <header>
-      <h3>Script Export</h3>
-      <p>Download exported scripts, or copy the JSON below into your own file.</p>
+      <h3>Exportar Script</h3>
+      <p>Descargar Scripts exportados, o copia el JSON.</p>
     </header>
     <section class="box">
       <textarea rows='10' id="export" readonly>{% parsed_commands | json %}</textarea>
     </section>
     <footer>
-      <a class="button" ng-href="{% ui.exported_text %}" download="scripts.json">Download</a>
+      <a class="button" ng-href="{% ui.exported_text %}" download="scripts.json">Descargar</a>
       <button ngclipboard data-clipboard-target="#export" ngclipboard-success="clipped(e);" ngclipboard-error="clipError(e);"><i class="fa fa fa-clipboard"></i> {% ui.copy %}</button>
-      <button ng-click="clearExport()">Done</button>
+      <button ng-click="clearExport()">Aceptar</button>
     </footer>
 </div>

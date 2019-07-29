@@ -3,22 +3,22 @@
 <div class="editor_modal_box" ng-if="ui.editbranch">
 
   <header ng-if="!ui.newbranch">
-    <h1>Modify Thread</h1>
+    <h1>Modificar Flujo</h1>
   </header>
   <header ng-if="ui.newbranch">
-    <h1>Add Thread</h1>
+    <h1>Agregar Flujo</h1>
   </header>
   <section>
     <div class="bigform">
           <p>
-            <label>Thread Name:</label>
+            <label>Nombre del Flujo:</label>
             <input ng-model="ui.rename_thread" type="text" required />
           </p>
     </div>
   </section>
   <footer>
-    <button type="submit">Save</button>
-    <button type="button" ng-click="ui.editbranch=false; ui.newbranch=false;">Cancel</button>
+    <button type="submit">Guardar</button>
+    <button type="button" ng-click="ui.editbranch=false; ui.newbranch=false;">Cancelar</button>
 
   </footer>
 </div>

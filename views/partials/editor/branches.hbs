@@ -1,7 +1,7 @@
 <nav>
     <ul class="branches">
         <li>
-            <strong>Threads</strong>
+            <strong>Flujos</strong>
         </li>
         <li ng-if="thisthread.topic=='default'" class="ng-class:{active: (thread.topic == thisthread.topic)};" ng-repeat="thisthread in command.script.script | orderBy: 'topic'" ng-click="setThread(thisthread.topic);">
             <div ng-if="!thisthread.editable">
@@ -10,9 +10,9 @@
                     <nav class="dropdown">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                         <ul>
-                            <li ng-if="thisthread.topic!='default'" ng-click="editThread(thisthread, $event)">Edit</li>
-                            <li ng-click="duplicateThreadModal(thisthread, $event)">Duplicate</li>
-                            <li class="delete" ng-if="thisthread.topic!='default'" ng-click="removeThread(thisthread, $event)">Delete</li>
+                            <li ng-if="thisthread.topic!='default'" ng-click="editThread(thisthread, $event)">Editar</li>
+                            <li ng-click="duplicateThreadModal(thisthread, $event)">Duplicar</li>
+                            <li class="delete" ng-if="thisthread.topic!='default'" ng-click="removeThread(thisthread, $event)">Borrar</li>
                         </ul>
                     </nav>
                 </a>
@@ -25,16 +25,16 @@
                     <nav class="dropdown">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                         <ul>
-                            <li ng-if="thisthread.topic!='default'" ng-click="editThread(thisthread, $event)">Edit</li>
-                            <li ng-click="duplicateThreadModal(thisthread, $event)">Duplicate</li>
-                            <li class="delete" ng-if="thisthread.topic!='default'" ng-click="removeThread(thisthread, $event)">Delete</li>
+                            <li ng-if="thisthread.topic!='default'" ng-click="editThread(thisthread, $event)">Editar</li>
+                            <li ng-click="duplicateThreadModal(thisthread, $event)">Duplicar</li>
+                            <li class="delete" ng-if="thisthread.topic!='default'" ng-click="removeThread(thisthread, $event)">Borrar</li>
                         </ul>
                     </nav>
                 </a>
             </div>
         </li>
         <li class="add-entry">
-          <a ng-click="createThread()">+ Add Thread</a>
+          <a ng-click="createThread()">+ Agregar Flujo</a>
         </li>
     </ul>
 </nav>

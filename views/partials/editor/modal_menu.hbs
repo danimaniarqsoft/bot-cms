@@ -1,20 +1,20 @@
 <form ng-submit="ui.modal_menu=false; makeDirty();">
     <div class="editor_modal_box" ng-if="ui.modal_menu">
       <header>
-        <h1>Edit Menu Options</h1>
+        <h1>Opciones para Editar</h1>
       </header>
       <section>
       <ul class="sheet">
         <li>
           <div class="delete"></div>
           <div class="cell">
-              Text
+              Texto
           </div>
           <div class="cell">
-              Value
+              Valor
           </div>
           <div class="cell">
-              Description
+              Descripción
           </div>
           <div class="checkbox">
 
@@ -38,12 +38,12 @@
           </div>
         </li>
         <li class="placeholder_button">
-            <button ng-click="ui.current_action.options.push({})">Add Option</button>
+            <button ng-click="ui.current_action.options.push({})">Agregar Opción</button>
         </li>
       </ul>
     </section>
     <footer>
-      <button type="submit">Done</button>
+      <button type="submit">Aceptar</button>
     </footer>
     </div>
 </form>
