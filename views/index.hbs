@@ -5,8 +5,8 @@
     <div class="workspace_wrapper"" ng-controller="botCommands">
             <div class="toolbar">
                 <div ng-if="!ui.export_mode" class="righthand_tool">
-                    <button class="lockable btn btn-primary" ng-click="toggleExportMode()">Export</button>
-                    <button class="lockable btn btn-primary" ng-click="toggleImportMode()">Import</button>
+                    <button class="lockable btn btn-primary" ng-click="toggleExportMode()">Exportar</button>
+                    <button class="lockable btn btn-primary" ng-click="toggleImportMode()">Importar</button>
                 </div>
                 <div ng-if="ui.export_mode" class="righthand_tool">
                     <button ng-disabled="ui.export_count==0" ng-click="createExport()" class="btn btn-primary primary">
@@ -18,8 +18,8 @@
 
                 <div>
                     <button class="lockable btn btn-primary" ng-click="createScriptModal()">Nuevo</button>
-                    <input type="search" ng-model="ui.filter" placeholder="Filter Scripts" />
-                    <label><input type="checkbox" ng-model="ui.searchScript" id="searchScript"> buscar en modo - full text</label>
+                    <input type="search" ng-model="ui.filter" placeholder="Filtrar Scripts" />
+                    <label><input class="clearninput" type="checkbox" ng-model="ui.searchScript" id="searchScript"> buscar en modo - full text</label>
                 </div>
 
             </div>
@@ -31,7 +31,7 @@
                 <tr>
                     <th class="sortable" ng-click="toggleSort('command')">Nombre del Script<span class="sortorder" ng-if="ui.sortField=='command'">▲</span><span class="sortorder" ng-if="ui.sortField=='-command'">▼</span></th>
                     <th>Descripción</th>
-                    <th class="sortable" ng-click="toggleSort('modified')">Modificiado <span class="sortorder" ng-if="ui.sortField=='-modified'">▼</span><span class="sortorder" ng-if="ui.sortField=='modified'">▲</span></th>
+                    <th class="sortable" ng-click="toggleSort('modified')">Modificado <span class="sortorder" ng-if="ui.sortField=='-modified'">▼</span><span class="sortorder" ng-if="ui.sortField=='modified'">▲</span></th>
                     <th ng-if="!ui.export_mode">Acciones</th>
                     <th ng-if="ui.export_mode">Exportar</th>
                 </tr>

@@ -287,7 +287,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
         filter: '',
         export_mode: false,
         copy: 'Copy',
-        import_button_text: 'Import',
+        import_button_text: 'Importar',
         sortField: '-modified',
     };
 
@@ -399,7 +399,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
 
         var texts = [];
         if (import_count > 0) {
-            texts.push('Import ' + import_count);
+            texts.push('Importar ' + import_count);
         }
         if (update_count > 0) {
             texts.push('Update ' + update_count);
@@ -408,7 +408,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
         if (texts.length) {
             $scope.ui.import_button_text =  texts.join(' and ');
         } else {
-            $scope.ui.import_button_text = 'Import';
+            $scope.ui.import_button_text = 'Importar';
         }
 
     }
@@ -529,7 +529,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
                 $scope.handleAjaxError(err);
             } else {
                 $scope.ui.import_mode = false;
-                $scope.confirmation('Import successful!');
+                $scope.confirmation('Importación Exitosa!');
             }
             $scope.imported_commands = [];
         });
@@ -558,7 +558,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
     }
 
     $scope.toggleImportMode = function() {
-        $scope.ui.import_button_text = 'Import';
+        $scope.ui.import_button_text = 'Importar';
         $scope.ui.import_mode = !$scope.ui.import_mode;
         $scope.commands_for_import = [];
     }
