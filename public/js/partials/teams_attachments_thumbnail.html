@@ -49,7 +49,7 @@
             </div>
         </li>
         <li class="placeholder_button" ng-if="!attachment.buttons || attachment.buttons.length < 6">
-            <button ng-click="addAction(attachment);">Add Button</button>
+            <button ng-click="addAction(attachment);">Agregar Botón</button>
         </li>
     </ul>
 </li>
@@ -57,18 +57,18 @@
     <label class="checkbox"><input type="checkbox" ng-checked="attachment.tap" ng-click="toggleTap(attachment);"  id="responseToggle"> Specify tap action</label>
 </li>
 <li ng-if="attachment.tap" ng-class="{invalid: attachment.tap.invalid_title};">
-  <label>Title</label>
+  <label>Título</label>
   <input type="text" placeholder="Tap Action Title" ng-model="attachment.tap.title" ng-change="makeDirty()" />
 </li>
 <li ng-if="attachment.tap">
-  <label>Tap Action</label>
+  <label>Acción de Tap</label>
   <select ng-model="attachment.tap.type" ng-change="makeDirty()">
-      <option value="imBack">Say</option>
-      <option value="openUrl">Open Link</option>
-      <option value="invoke">Trigger Event</option>
+      <option value="imBack">Decir</option>
+      <option value="openUrl">Abrir link</option>
+      <option value="invoke">Disparar Evento</option>
   </select>
 </li>
 <li ng-if="attachment.tap" ng-class="{invalid: attachment.tap.invalid_value};">
-  <label>Value</label>
+  <label>Valor</label>
   <input type="text" placeholder="Tap Action Value" ng-model="attachment.tap.value" ng-change="makeDirty()" />
 </li>

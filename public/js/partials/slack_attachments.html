@@ -31,14 +31,14 @@ https://api.slack.com/docs/message-attachments
             <input type="text" ng-model="attachment.color" ng-change="makeDirty()" />
         </li>
         <li>
-            <label>Fallback Text</label>
+            <label>Texto Fallback</label>
             <textarea rows="1" placeholder="Required plain-text summary of the attachment" ng-change="makeDirty()" msd-elastic="" ng-model="attachment.fallback"></textarea>
         </li>
         <li class="placeholder_button" ng-if="!(attachment.hasAuthor || attachment.author_name || attachment.author_link || attachment.author_icon)">
-            <label>Author</label> <button ng-click="addAuthor(attachment)">Add Author</button>
+            <label>Autor</label> <button ng-click="addAuthor(attachment)">Agregar Autor</button>
         </li>
         <li ng-if="attachment.hasAuthor || attachment.author_name || attachment.author_link || attachment.author_icon">
-            <label>Author</label>
+            <label>Autor</label>
             <input type="text" placeholder="A. W. Thor" ng-model="attachment.author_name" />
         </li>
         <li class="subfield" ng-if="attachment.hasAuthor || attachment.author_name || attachment.author_link || attachment.author_icon">
@@ -54,7 +54,7 @@ https://api.slack.com/docs/message-attachments
             </ul>
         </li>
         <li class="placeholder_button" ng-if="!(attachment.hasFooter || attachment.footer || attachment.footer_icon)">
-            <label>Footer</label><button ng-click="addFooter(attachment)">Add Footer</button>
+            <label>Footer</label><button ng-click="addFooter(attachment)">Agregar Footer</button>
         </li>
         <li ng-if="(attachment.hasFooter || attachment.footer || attachment.footer_icon)">
             <label>Footer</label>
@@ -69,10 +69,10 @@ https://api.slack.com/docs/message-attachments
             </ul>
         </li>
         <li class="placeholder_button" ng-if="!(attachment.hasImage || attachment.image_url || attachment.thumb_url)">
-            <label>Image</label><button ng-click="addImage(attachment)">Add Image</button>
+            <label>Imagen</label><button ng-click="addImage(attachment)">Agregar Imagen</button>
         </li>
         <li ng-if="(attachment.hasImage || attachment.image_url || attachment.thumb_url)">
-            <label>Image</label>
+            <label>Imagen</label>
             <input type="text" placeholder="http://mywebsite.com/image.png" ng-if="attachment.image_url || !attachment.thumb_url" ng-model="attachment.image_url" />
             <input type="text" placeholder="http://mywebsite.com/image.png" ng-if="attachment.thumb_url" ng-model="attachment.thumb_url" />
         </li>
@@ -84,13 +84,13 @@ https://api.slack.com/docs/message-attachments
             </ul>
         </li>
         <li>
-            <label>Fields</label>
+            <label>Campos</label>
             <div class="sheetwrapper">
               <ul class="sheet" ng-if="attachment.fields.length">
                   <li class="header">
                       <div class="draghandle">&nbsp;</div>
-                      <div class="cell">Title</div>
-                      <div class="cell">Value</div>
+                      <div class="cell">Título</div>
+                      <div class="cell">Valor</div>
                       <div class="short">Short</div>
                       <div class="delete">&nbsp;</div>
                   </li>
@@ -122,23 +122,23 @@ https://api.slack.com/docs/message-attachments
               </ul>
               <ul class="sheet">
                 <li class="placeholder_button">
-                    <button ng-click="addField(attachment);">Add Field</button>
+                    <button ng-click="addField(attachment);">Agregar Campo</button>
                 </li>
               </ul>
             </div>
         </li>
         <li>
-            <label>Buttons</label>
+            <label>Botones</label>
         </li>
         <li>
           <div class="sheetwrapper">
             <ul class="sheet"  ng-if="attachment.actions.length">
               <li class="header" ng-if="attachment.actions.length">
               <div class="draghandle">&nbsp;</div>
-              <div class="short">Type</div>
-              <div class="cell">Title</div>
-              <div class="cell">Name</div>
-              <div class="cell">Value</div>
+              <div class="short">Tipo</div>
+              <div class="cell">Título</div>
+              <div class="cell">Nombre</div>
+              <div class="cell">Valor</div>
               <div class="slackdots"></div>
               <div class="delete">&nbsp;</div>
             </li>
@@ -168,11 +168,11 @@ https://api.slack.com/docs/message-attachments
                     </div>
                     <div class="cell" ng-if="action.type=='select'" dnd-nodrag>
                         <select ng-model="action.data_source" ng-change="makeDirty()">
-                            <option value="users">User List</option>
-                            <option value="channels">Channel List</option>
-                            <option value="conversations">All Conversations</option>
-                            <option value="default">Custom Options</option>
-                            <option value="external">External Source</option>
+                            <option value="users">Lista de Usuarios</option>
+                            <option value="channels">Lista de canales</option>
+                            <option value="conversations">Todas las conversaciones</option>
+                            <option value="default">Opciones customizadas</option>
+                            <option value="external">Fuentes externas</option>
                         </select>
                     </div>
                     <div class="slackdots" ng-if="action.type=='button'" dnd-nodrag>
@@ -190,9 +190,9 @@ https://api.slack.com/docs/message-attachments
               </ul>
               <ul class="sheet">
                 <li class="placeholder_button" ng-if="!attachment.actions || attachment.actions.length < 5">
-                    <button ng-click="addAction(attachment);">Add Button</button>
-                    <button ng-click="addLink(attachment);">Add Link Button</button>
-                    <button ng-click="addMenu(attachment);">Add Menu</button>
+                    <button ng-click="addAction(attachment);">Agregar botón</button>
+                    <button ng-click="addLink(attachment);">Agregar link como botón</button>
+                    <button ng-click="addMenu(attachment);">Agregar Menú</button>
                 </li>
             </ul>
         </li>
@@ -204,7 +204,7 @@ https://api.slack.com/docs/message-attachments
 
     <ul>
         <li class="placeholder_button">
-            <button ng-click="addAttachment(ui.outgoing_message);">Add Attachment</button>
+            <button ng-click="addAttachment(ui.outgoing_message);">Agregar Adjunto</button>
         </li>
     </ul>
 </div>

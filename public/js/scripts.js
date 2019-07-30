@@ -2048,7 +2048,7 @@ app.controller('scriptEditor', ['$scope', '$cookies', '$sce', 'sdk', '$location'
                     $scope.command.modified = res.modified;
 
                     $scope.saved();
-                    $scope.confirmation('Saved successfully.');
+                    $scope.confirmation('Salvado Exitoso');
                     $scope.$apply();
                     resolve(res);
                 }).catch(function(err) {

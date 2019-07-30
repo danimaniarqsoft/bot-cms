@@ -37,14 +37,14 @@
         <li  ng-if="features.custom_variables">
             <label>Variable:</label>
             <select ng-model="ui.outgoing_message.collect.key" ng-options="item for item in command.script.variables"  ng-change="makeDirty()" class="ng-class: {invalid: ui.outgoing_message.invalid_key};">
-                <option value="">* Add Custom Variable *</option>
+                <option value="">* Agregar Variable customizada*</option>
             </select>
         </li>
         <li  ng-if="ui.outgoing_message.collect.key == null">
             <form class="add-entry" name="formHolder.add_variable" ng-submit="addVariableAndSet(variable,ui.outgoing_message.collect)">
                 <input type="hidden" ng-model="variable.type" required value="string" />
                 <input type="text" required ng-model="variable.name" placeholder="new_variable_name" pattern="[a-z,0-9,\-\_]{3,30}"/>
-                <button type="submit" ng-disabled="formHolder.add_variable.$invalid">Add</button>
+                <button type="submit" ng-disabled="formHolder.add_variable.$invalid">Agregar</button>
             </form>
             <span class="validation_requirements">lowercase letters, numbers, _, -</span>
 
@@ -128,7 +128,7 @@
                         <form ng-submit="addThreadAsAction(newbranch, option);">
                             <div class="add-entry">
                                 <input type="text" ng-model="newbranch" placeholder="New thread name" />
-                                <button type="submit">Add</button>
+                                <button type="submit">Agregar</button>
                             </div>
                         </form>
                     </div>
@@ -136,7 +136,7 @@
             </ul>
             <ul>
                 <li class="placeholder_button" ng-if="features.conditionals" ng-mouseover="setHelp('add condition');">
-                    <button class="add-button" title="Add Condition" ng-click="addCondition(ui.outgoing_message.collect.options);" >Add Condition</button>
+                    <button class="add-button" title="Agregar Condifición" ng-click="addCondition(ui.outgoing_message.collect.options);" >Agregar Condifición</button>
                 </li>
             </ul>
 
@@ -188,7 +188,7 @@
                 <form ng-submit="addThreadAsAction(newbranch, option);">
                     <div class="add-entry">
                         <input type="text" ng-model="newbranch" placeholder="New thread name" />
-                        <button type="submit">Add</button>
+                        <button type="submit">Agregar</button>
                     </div>
                 </form>
             </div>

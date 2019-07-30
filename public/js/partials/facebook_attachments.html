@@ -1,15 +1,15 @@
 <div class="panel">
     <ul>
         <li class="label">
-            <label>Quick Replies</label>
+            <label>Respuestas Rápidas</label>
         </li>
     </ul>
     <ul class="sheet full">
         <li class="header" ng-if="ui.outgoing_message.quick_replies.length">
           <div class="delete">&nbsp;</div>
-          <div class="cell">Title</div>
+          <div class="cell">Título</div>
           <div class="cell">Payload</div>
-          <div class="cell">Image URL</div>
+          <div class="cell">URL de la Imagen</div>
         </li>
         <li ng-repeat="reply in ui.outgoing_message.quick_replies" class="ng-class:{invalid: reply.invalid}">
             <div class="delete">
@@ -20,7 +20,7 @@
                     <input type="text" ng-model="reply.title" ng-change="makeDirty()">
                 </span>
                 <span ng-if="reply.content_type=='location'">
-                    Location
+                    Ubicación
                 </span>
             </div>
             <div class="ng-class:{disabled: reply.content_type=='location'}; cell">
@@ -35,8 +35,8 @@
             </div>
         </li>
         <li class="placeholder_button" ng-if="!ui.outgoing_message.quick_replies || ui.outgoing_message.quick_replies.length < 11">
-            <button ng-click="fb_addQuickReply(ui.outgoing_message,'text')">Add Quick Reply</button>
-            <button ng-click="fb_addQuickReply(ui.outgoing_message,'location')">Add Location</button>
+            <button ng-click="fb_addQuickReply(ui.outgoing_message,'text')">Agregar respuesta rápida</button>
+            <button ng-click="fb_addQuickReply(ui.outgoing_message,'location')">Agregar ubicación</button>
         </li>
     </ul>
 
