@@ -470,7 +470,7 @@ app.controller('botCommands', ['$scope',  'sdk', function($scope, sdk) {
                 "topic":"default",
                 "script":[
                     {
-                        "text": ["This is the " + $scope.command.trigger + " script. Customize me!"],
+                        "text": ["Es el script " + $scope.command.trigger + ". Modificar!"],
                     },
                     {
                         "action": "complete",
